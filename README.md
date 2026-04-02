@@ -1,2 +1,2 @@
 # JS-tasks
-mini js tasks
+- mini js tasks
