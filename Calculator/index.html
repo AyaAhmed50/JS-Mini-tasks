@@ -5,8 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    
+<body class="h-screen flex justify-center items-center bg-slate-900">
+    <div class="w-72 bg-pink-800 p-4 rounded-2xl flex flex-col gap-4"> <!-- Calculator -->
+        <div class="relative bg-slate-800 rounded-2xl h-16 flex flex-col justify-center items-end pr-4"> <!-- Screen -->
+            <div class="absolute"></div> <!-- history -->
+            <span class="text-slate-200 font-bold text-3xl">0</span> <!-- result -->
+        </div>
+
+        <!-- inputs -->
+        <div class="grid grid-cols-4 justify-between text-center gap-2 text-xl">
+            <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn special">CL</button>
+            <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn special">Del</button>
+            <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn operator">%</button>
+            <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn operator">/</button>
+            <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl col-start-4 row-start-2 btn operator">*</button>
+            <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl col-start-4 row-start-3 btn operator">+</button>
+            <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl col-start-4 row-start-4 btn operator">-</button>
+            <div class="col-start-1 col-end-4 row-start-2 row-end-5 gap-2 flex flex-row-reverse flex-wrap justify-between">
+                <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn number">9</button>
+                <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn number">8</button>
+                <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn number">7</button>
+                <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn number">6</button>
+                <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn number">5</button>
+                <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn number">4</button>
+                <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn number">3</button>
+                <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn number">2</button>
+                <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn number">1</button>
+            </div>
+            <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn number">.</button>
+            <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn number">00</button>
+            <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn number">0</button>
+            <button class="bg-slate-700 text-slate-200 size-14 font-semibold rounded-xl btn equals">=</button>
+        </div>
+    </div>
 </body>
 </html>
