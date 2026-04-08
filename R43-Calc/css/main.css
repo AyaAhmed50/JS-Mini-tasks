@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-1: #070a12;
+    --bg-2: #000000;
+    --card: rgba(255, 255, 255, 0.06);
+    --card-border: rgba(255, 255, 255, 0.10);
+    --text: #e5e7eb;
+    --muted: rgba(229, 231, 235, 0.65);
+
+    --btn: rgba(255, 255, 255, 0.10);
+    --btn-hover: rgba(255, 255, 255, 0.16);
+    --btn-active: rgba(255, 255, 255, 0.22);
+    --btn-border: rgba(255, 255, 255, 0.10);
+
+    --danger: rgba(239, 68, 68, 0.22);
+    --danger-hover: rgba(239, 68, 68, 0.30);
+
+    --op: rgba(99, 102, 241, 0.22);
+    --op-hover: rgba(99, 102, 241, 0.30);
+
+    --equals: rgba(16, 185, 129, 0.26);
+    --equals-hover: rgba(16, 185, 129, 0.34);
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        linear-gradient(135deg, var(--bg-1), var(--bg-2));
+    padding: 20px;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+.calc{
+    width: min(360px, 92vw);
+    padding: 16px;
+    border-radius: 28px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--card-border);
+    box-shadow:
+        0 18px 60px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+}
+
+.calc input{
+    width: 100%;
+    height: 72px;
+    margin-bottom: 12px;
+    padding: 0 16px;
+    background: rgba(0, 0, 0, 0.30);
+    color: var(--text);
+    font-size: 32px;
+    font-weight: 800;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    text-align: right;
+    letter-spacing: 0.3px;
+}
+
+.calc input:focus{
+    outline: none;
+    border-color: rgba(99, 102, 241, 0.55);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.18);
+}
+
+.calc .buttons{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.calc button{
+    height: 60px;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--btn-border);
+    background-color: var(--btn);
+    color: var(--text);
+    cursor: pointer;
+    user-select: none;
+    transition: transform 90ms ease, background-color 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.20),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+.calc button:hover{
+    background-color: var(--btn-hover);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.calc button:active{
+    background-color: var(--btn-active);
+    transform: scale(0.98);
+}
+
+/* Button coloring (keeps your original HTML order):
+   1: CL, 2: DL, 3: %, 4: /, 8: *, 12: +, 16: -, 20: = */
+.calc button:nth-child(1),
+.calc button:nth-child(2){
+    background-color: var(--danger);
+    border-color: rgba(239, 68, 68, 0.35);
+}
+.calc button:nth-child(1):hover,
+.calc button:nth-child(2):hover{
+    background-color: var(--danger-hover);
+}
+
+.calc button:nth-child(3),
+.calc button:nth-child(4),
+.calc button:nth-child(8),
+.calc button:nth-child(12),
+.calc button:nth-child(16){
+    background-color: var(--op);
+    border-color: rgba(99, 102, 241, 0.35);
+}
+.calc button:nth-child(3):hover,
+.calc button:nth-child(4):hover,
+.calc button:nth-child(8):hover,
+.calc button:nth-child(12):hover,
+.calc button:nth-child(16):hover{
+    background-color: var(--op-hover);
+}
+
+.calc button:last-child{
+    background-color: var(--equals);
+    border-color: rgba(16, 185, 129, 0.42);
+    color: rgba(236, 253, 245, 0.98);
+}
+.calc button:last-child:hover{
+    background-color: var(--equals-hover);
+}
+
+@media (max-width: 360px){
+    .calc{
+        padding: 14px;
+        border-radius: 24px;
+    }
+    .calc input{
+        height: 66px;
+        font-size: 28px;
+    }
+    .calc button{
+        height: 54px;
+        border-radius: 16px;
+    }
+}
